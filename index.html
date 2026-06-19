@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parth Patel | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">Parth Patel</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">Parth Patel</h1>
+      <p class="hero-tagline">Software Developer · Problem Solver · Builder</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a passionate developer who loves building things that live on the internet.
+            I enjoy solving complex problems and turning ideas into clean, efficient code.
+          </p>
+          <p>
+            When I'm not coding, you can find me exploring new technologies, working on side
+            projects, or sharpening my skills.
+          </p>
+          <a href="assets/resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <!-- Replace with: <img src="assets/profile.jpg" alt="Parth Patel" /> -->
+            <span>Your Photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Frameworks & Tools</h3>
+          <ul>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Git / GitHub</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Other</h3>
+          <ul>
+            <li>REST APIs</li>
+            <li>Agile / Scrum</li>
+            <li>Testing & QA</li>
+            <li>UI Automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">Project One</div>
+          <div class="project-body">
+            <p>A short description of what this project does and the problem it solves.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-sm">GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">Project Two</div>
+          <div class="project-body">
+            <p>A short description of what this project does and the problem it solves.</p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-sm">GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">Project Three</div>
+          <div class="project-body">
+            <p>A short description of what this project does and the problem it solves.</p>
+            <div class="project-tags">
+              <span class="tag">Java</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-sm">GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-sub">I'm currently open to new opportunities. Feel free to reach out!</p>
+      <form class="contact-form" netlify name="contact" method="POST">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://github.com/parth0326" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="mailto:ppatel2005263@gmail.com">Email</a>
+    </div>
+    <p>&copy; 2026 Parth Patel. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
