@@ -120,7 +120,7 @@ ul { list-style: none; }
 /* ── Hero ── */
 .hero {
   min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: flex-start;
   padding: 6rem 2.5rem 4rem;
   position: relative;
   overflow: hidden;
@@ -131,11 +131,10 @@ ul { list-style: none; }
   position: relative; z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 4rem;
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
 }
 
 .hero-content { flex: 1; }
