@@ -1,43 +1,88 @@
-// Mobile nav toggle
+// ── Mobile nav ──
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-// Close mobile nav on link click
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// Highlight active nav link on scroll
+// ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id]');
 const links = document.querySelectorAll('.nav-links a');
 
-const observer = new IntersectionObserver(entries => {
+const navObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       links.forEach(l => l.classList.remove('active'));
-      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('active');
+      const a = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (a) a.classList.add('active');
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.4 });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => navObserver.observe(s));
 
-// Fade-in on scroll
-const fadeEls = document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-form');
+// ── Typed hero title ──
+const phrases = [
+  'Cybersecurity Student',
+  'Deep Learning Enthusiast',
+  'AI / ML Explorer',
+  'Security Researcher',
+];
+
+const typedEl = document.querySelector('.typed-text');
+let phraseIdx = 0, charIdx = 0, deleting = false;
+
+function typeLoop() {
+  const phrase = phrases[phraseIdx];
+  if (!deleting) {
+    typedEl.textContent = phrase.slice(0, ++charIdx);
+    if (charIdx === phrase.length) {
+      deleting = true;
+      setTimeout(typeLoop, 2000);
+      return;
+    }
+  } else {
+    typedEl.textContent = phrase.slice(0, --charIdx);
+    if (charIdx === 0) {
+      deleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+    }
+  }
+  setTimeout(typeLoop, deleting ? 45 : 80);
+}
+
+typeLoop();
+
+// ── Fade-in on scroll ──
+const fadeTargets = document.querySelectorAll(
+  '.about-grid, .skill-card, .project-card, .about-card, .contact-container'
+);
+
 const fadeObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-fadeEls.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+fadeTargets.forEach(el => {
+  el.classList.add('fade-in');
   fadeObserver.observe(el);
+});
+
+// ── Project filter ──
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    projectCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.style.display = match ? 'flex' : 'none';
+    });
+  });
 });
