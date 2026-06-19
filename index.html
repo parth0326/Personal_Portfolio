@@ -17,9 +17,15 @@
       <li><a href="#about">about</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#projects">projects</a></li>
+      <li><a href="#currently">currently</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-right">
+      <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <span class="theme-icon">&#9790;</span>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -147,6 +153,31 @@
     </div>
   </section>
 
+  <!-- CURRENTLY -->
+  <section class="section" id="currently">
+    <div class="container">
+      <h2 class="section-title"><span class="accent">//</span> currently</h2>
+      <div class="currently-grid">
+        <div class="currently-item">
+          <span class="currently-label">studying</span>
+          <span class="currently-value">Network Security & Cryptography</span>
+        </div>
+        <div class="currently-item">
+          <span class="currently-label">building</span>
+          <span class="currently-value">Personal portfolio & side projects</span>
+        </div>
+        <div class="currently-item">
+          <span class="currently-label">learning</span>
+          <span class="currently-value">Deep learning architectures</span>
+        </div>
+        <div class="currently-item">
+          <span class="currently-label">open to</span>
+          <span class="currently-value">Internships & research opportunities</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section section-alt" id="contact">
     <div class="container contact-container">
@@ -155,7 +186,13 @@
         Open to internships, research opportunities, and collaborations.<br />
         Let's build something together.
       </p>
-      <a href="mailto:ppatel2005263@gmail.com" class="btn btn-primary contact-email">ppatel2005263@gmail.com</a>
+      <div class="contact-email-row">
+        <a href="mailto:ppatel2005263@gmail.com" class="btn btn-primary contact-email">ppatel2005263@gmail.com</a>
+        <button class="copy-btn" data-copy="ppatel2005263@gmail.com" title="Copy email">
+          <span class="copy-icon">&#10697;</span>
+          <span class="copy-label">copy</span>
+        </button>
+      </div>
       <div class="contact-links">
         <a href="https://github.com/parth0326" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/parth-patel-0656822b4/" target="_blank" rel="noopener">LinkedIn</a>
@@ -167,6 +204,30 @@
   <footer class="footer">
     <p>Parth Patel &mdash; Built from scratch with HTML, CSS & JavaScript</p>
   </footer>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="#about" class="bottom-nav-item">
+      <span class="bottom-nav-icon">&#9651;</span>
+      <span>about</span>
+    </a>
+    <a href="#skills" class="bottom-nav-item">
+      <span class="bottom-nav-icon">&#9670;</span>
+      <span>skills</span>
+    </a>
+    <a href="#projects" class="bottom-nav-item">
+      <span class="bottom-nav-icon">&#9632;</span>
+      <span>projects</span>
+    </a>
+    <a href="#contact" class="bottom-nav-item">
+      <span class="bottom-nav-icon">&#9711;</span>
+      <span>contact</span>
+    </a>
+  </nav>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
 
   <script src="js/main.js"></script>
 </body>
