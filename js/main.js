@@ -103,30 +103,6 @@ fadeTargets.forEach(el => {
   fadeObserver.observe(el);
 });
 
-// ── Custom cursor ──
-const dot = document.querySelector('.cursor-dot');
-const ring = document.querySelector('.cursor-ring');
-let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
-
-document.addEventListener('mousemove', e => {
-  dotX = e.clientX; dotY = e.clientY;
-  dot.style.left = dotX + 'px';
-  dot.style.top = dotY + 'px';
-});
-
-function animateRing() {
-  ringX += (dotX - ringX) * 0.15;
-  ringY += (dotY - ringY) * 0.15;
-  ring.style.left = ringX + 'px';
-  ring.style.top = ringY + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.querySelectorAll('a, button, .project-card, .skill-card, .currently-item').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-});
 
 // ── Project filter ──
 const filterBtns = document.querySelectorAll('.filter-btn');

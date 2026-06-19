@@ -120,7 +120,7 @@ ul { list-style: none; }
 /* ── Hero ── */
 .hero {
   min-height: 100vh;
-  display: flex; align-items: center;
+  display: flex; align-items: center; justify-content: center;
   padding: 6rem 2.5rem 4rem;
   position: relative;
   overflow: hidden;
@@ -131,9 +131,11 @@ ul { list-style: none; }
   position: relative; z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4rem;
   width: 100%;
   max-width: 1000px;
+  margin: 0 auto;
 }
 
 .hero-content { flex: 1; }
@@ -196,9 +198,10 @@ ul { list-style: none; }
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 1rem;
 }
+body.light .hero-name { color: #0f172a; }
 
 .hero-title {
   font-family: var(--font-mono);
@@ -400,7 +403,7 @@ ul { list-style: none; }
 .project-card h3 {
   font-size: 0.98rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
 }
 
 .project-card p {
@@ -427,7 +430,14 @@ ul { list-style: none; }
 .coming-soon-card { opacity: 0.6; }
 
 /* ── Contact ── */
-.contact-container { text-align: center; max-width: 600px; }
+.contact-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .contact-sub {
   color: var(--text-muted);
@@ -498,32 +508,6 @@ ul { list-style: none; }
 }
 .stagger-item.visible { opacity: 1; transform: translateY(0); }
 
-/* ── Custom cursor ── */
-.cursor-dot, .cursor-ring {
-  position: fixed; top: 0; left: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
-}
-.cursor-dot {
-  width: 6px; height: 6px;
-  background: var(--accent);
-}
-.cursor-ring {
-  width: 28px; height: 28px;
-  border: 1px solid var(--accent);
-  opacity: 0.5;
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
-}
-.cursor-ring.hover {
-  width: 44px; height: 44px;
-  opacity: 0.8;
-}
-@media (hover: none) {
-  .cursor-dot, .cursor-ring { display: none; }
-}
 
 /* ── Currently section ── */
 .currently-grid {
