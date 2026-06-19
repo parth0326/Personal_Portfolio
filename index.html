@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parth Patel | Portfolio</title>
+  <title>Parth Patel</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="navbar">
-    <div class="nav-logo">Parth Patel</div>
+    <a href="#hero" class="nav-logo">pp<span class="cursor-blink">_</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
   </nav>
@@ -25,37 +25,52 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <p class="hero-greeting">Hi, I'm</p>
+      <p class="hero-pre"><span class="accent">$</span> whoami</p>
       <h1 class="hero-name">Parth Patel</h1>
-      <p class="hero-tagline">Software Developer · Problem Solver · Builder</p>
+      <p class="hero-title">
+        <span class="typed-text"></span><span class="typed-cursor">|</span>
+      </p>
+      <p class="hero-sub">
+        Cybersecurity · Deep Learning · AI &nbsp;|&nbsp; Miami University '27
+      </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://github.com/parth0326" target="_blank" rel="noopener">GitHub</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/parth-patel-0656822b4/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
+    <div class="hero-grid-overlay"></div>
   </section>
 
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title"><span class="accent">//</span> about</h2>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm a passionate developer who loves building things that live on the internet.
-            I enjoy solving complex problems and turning ideas into clean, efficient code.
+            I'm a Cybersecurity major with a minor in Deep Learning & Artificial Intelligence
+            at Miami University, graduating in 2027. I'm passionate about the intersection of
+            security and AI — building systems that are both intelligent and resilient.
           </p>
           <p>
-            When I'm not coding, you can find me exploring new technologies, working on side
-            projects, or sharpening my skills.
+            I focus on offensive and defensive security, threat analysis, and applying
+            machine learning to solve real-world security problems. I'm always building,
+            always learning.
           </p>
-          <a href="assets/resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+          <a href="assets/resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
         </div>
-        <div class="about-image">
-          <div class="image-placeholder">
-            <!-- Replace with: <img src="assets/profile.jpg" alt="Parth Patel" /> -->
-            <span>Your Photo</span>
-          </div>
+        <div class="about-card">
+          <div class="about-card-line"><span class="key">name</span><span class="val">Parth Patel</span></div>
+          <div class="about-card-line"><span class="key">school</span><span class="val">Miami University</span></div>
+          <div class="about-card-line"><span class="key">major</span><span class="val">Cybersecurity</span></div>
+          <div class="about-card-line"><span class="key">minor</span><span class="val">Deep Learning & AI</span></div>
+          <div class="about-card-line"><span class="key">class</span><span class="val">2027</span></div>
+          <div class="about-card-line"><span class="key">status</span><span class="val"><span class="status-dot"></span>open to opportunities</span></div>
         </div>
       </div>
     </div>
@@ -64,33 +79,30 @@
   <!-- SKILLS -->
   <section class="section section-alt" id="skills">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title"><span class="accent">//</span> skills</h2>
       <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Security</h3>
+          <ul>
+            <li>Coming soon</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>AI / ML</h3>
+          <ul>
+            <li>Coming soon</li>
+          </ul>
+        </div>
         <div class="skill-card">
           <h3>Languages</h3>
           <ul>
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>HTML / CSS</li>
+            <li>Coming soon</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Frameworks & Tools</h3>
+          <h3>Tools & Platforms</h3>
           <ul>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Git / GitHub</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Other</h3>
-          <ul>
-            <li>REST APIs</li>
-            <li>Agile / Scrum</li>
-            <li>Testing & QA</li>
-            <li>UI Automation</li>
+            <li>Coming soon</li>
           </ul>
         </div>
       </div>
@@ -100,87 +112,51 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title"><span class="accent">//</span> projects</h2>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="security">security</button>
+        <button class="filter-btn" data-filter="ai">ai / ml</button>
+        <button class="filter-btn" data-filter="other">other</button>
+      </div>
+
       <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-header">Project One</div>
-          <div class="project-body">
-            <p>A short description of what this project does and the problem it solves.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">React</span>
+        <!-- Projects will be added here over time -->
+        <div class="project-card coming-soon-card" data-category="all">
+          <div class="project-card-top">
+            <span class="project-icon">&#9632;</span>
+            <div class="project-card-links">
+              <a href="https://github.com/parth0326" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="btn btn-sm">GitHub</a>
-            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
-          </div>
+          <h3>Projects Coming Soon</h3>
+          <p>Currently working on some exciting projects. Check back soon or follow my GitHub for updates.</p>
+          <div class="project-tags"></div>
         </div>
-
-        <div class="project-card">
-          <div class="project-header">Project Two</div>
-          <div class="project-body">
-            <p>A short description of what this project does and the problem it solves.</p>
-            <div class="project-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">Node.js</span>
-            </div>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="btn btn-sm">GitHub</a>
-            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">Project Three</div>
-          <div class="project-body">
-            <p>A short description of what this project does and the problem it solves.</p>
-            <div class="project-tags">
-              <span class="tag">Java</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="btn btn-sm">GitHub</a>
-            <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section section-alt" id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-sub">I'm currently open to new opportunities. Feel free to reach out!</p>
-      <form class="contact-form" netlify name="contact" method="POST">
-        <input type="hidden" name="form-name" value="contact" />
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+    <div class="container contact-container">
+      <h2 class="section-title"><span class="accent">//</span> contact</h2>
+      <p class="contact-sub">
+        Open to internships, research opportunities, and collaborations.<br />
+        Let's build something together.
+      </p>
+      <a href="mailto:ppatel2005263@gmail.com" class="btn btn-primary contact-email">ppatel2005263@gmail.com</a>
+      <div class="contact-links">
+        <a href="https://github.com/parth0326" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/parth-patel-0656822b4/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="social-links">
-      <a href="https://github.com/parth0326" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      <a href="mailto:ppatel2005263@gmail.com">Email</a>
-    </div>
-    <p>&copy; 2026 Parth Patel. All rights reserved.</p>
+    <p>Parth Patel &mdash; Built from scratch with HTML, CSS & JavaScript</p>
   </footer>
 
   <script src="js/main.js"></script>
