@@ -138,6 +138,66 @@ if (searchInput) {
   searchInput.addEventListener('input', applyFilters);
 }
 
+// ── Chat widget ──
+const chatFab = document.getElementById('chat-fab');
+const chatWidget = document.getElementById('chat-widget');
+const chatClose = document.getElementById('chat-close');
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+const chatMessages = document.getElementById('chat-messages');
+const chatHistory = [];
+
+chatFab.addEventListener('click', () => {
+  chatWidget.classList.add('open');
+  chatInput.focus();
+});
+chatClose.addEventListener('click', () => chatWidget.classList.remove('open'));
+
+function appendMsg(role, text) {
+  const div = document.createElement('div');
+  div.className = `chat-msg ${role}`;
+  const p = document.createElement('p');
+  p.textContent = text;
+  div.appendChild(p);
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = '';
+  chatSend.disabled = true;
+
+  appendMsg('user', text);
+  chatHistory.push({ role: 'user', content: text });
+
+  const typing = appendMsg('typing assistant', 'thinking...');
+
+  try {
+    const res = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory }),
+    });
+    const data = await res.json();
+    const reply = data.reply || 'Sorry, something went wrong.';
+    chatMessages.removeChild(typing);
+    appendMsg('assistant', reply);
+    chatHistory.push({ role: 'assistant', content: reply });
+  } catch {
+    chatMessages.removeChild(typing);
+    appendMsg('assistant', 'Could not connect. Please try again later.');
+  }
+
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener('click', sendMessage);
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+
 // ── Copy email button ──
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', () => {

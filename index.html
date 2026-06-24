@@ -213,6 +213,30 @@
     <p>Parth Patel &mdash; Built from scratch with HTML, CSS & JavaScript</p>
   </footer>
 
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <span class="chat-status-dot"></span>
+        <span class="chat-title">Ask about my work</span>
+      </div>
+      <button class="chat-close" id="chat-close" aria-label="Close chat">&#10005;</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg assistant">
+        <p>Hi! I'm an AI assistant for Parth's portfolio. Ask me anything about his background, skills, or projects.</p>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Ask something..." autocomplete="off" />
+      <button id="chat-send" aria-label="Send">&#10148;</button>
+    </div>
+  </div>
+  <button class="chat-fab" id="chat-fab" aria-label="Open chat">
+    <span class="chat-fab-icon">&#10070;</span>
+    <span class="chat-fab-label">Ask about my work</span>
+  </button>
+
   <!-- MOBILE BOTTOM NAV -->
   <nav class="bottom-nav">
     <a href="#about" class="bottom-nav-item">
