@@ -104,21 +104,39 @@ fadeTargets.forEach(el => {
 });
 
 
-// ── Project filter ──
+// ── Project filter + search ──
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const searchInput = document.getElementById('project-search');
+const noResults = document.querySelector('.no-results');
+let activeFilter = 'all';
+
+function applyFilters() {
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  let visible = 0;
+  projectCards.forEach(card => {
+    const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
+    const text = card.textContent.toLowerCase();
+    const searchMatch = query === '' || text.includes(query);
+    const show = categoryMatch && searchMatch;
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+  if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+}
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    projectCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.category === filter;
-      card.style.display = match ? 'flex' : 'none';
-    });
+    activeFilter = btn.dataset.filter;
+    applyFilters();
   });
 });
+
+if (searchInput) {
+  searchInput.addEventListener('input', applyFilters);
+}
 
 // ── Copy email button ──
 document.querySelectorAll('.copy-btn').forEach(btn => {

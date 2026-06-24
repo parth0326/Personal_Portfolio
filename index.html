@@ -130,12 +130,19 @@
     <div class="container">
       <h2 class="section-title"><span class="accent">//</span> projects</h2>
 
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">all</button>
-        <button class="filter-btn" data-filter="security">security</button>
-        <button class="filter-btn" data-filter="ai">ai / ml</button>
-        <button class="filter-btn" data-filter="other">other</button>
+      <div class="projects-controls">
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">all</button>
+          <button class="filter-btn" data-filter="security">security</button>
+          <button class="filter-btn" data-filter="ai">ai / ml</button>
+          <button class="filter-btn" data-filter="other">other</button>
+        </div>
+        <div class="project-search-wrap">
+          <span class="search-icon">&#9906;</span>
+          <input type="text" id="project-search" class="project-search" placeholder="search projects..." autocomplete="off" />
+        </div>
       </div>
+      <p class="no-results" style="display:none;">No projects match your search.</p>
 
       <div class="projects-grid">
         <!-- Projects will be added here over time -->
