@@ -17,6 +17,8 @@
   --font-sans:   'Inter', sans-serif;
   --radius:      6px;
   --ease:        0.2s ease;
+  --nav-bg:      rgba(8, 12, 15, 0.9);
+  --bottom-nav-bg: rgba(13, 17, 23, 0.95);
 }
 
 /* ── Light mode ── */
@@ -31,6 +33,8 @@ body.light {
   --text:       #1a2332;
   --text-muted: #5a6780;
   --text-dim:   #9aa5b4;
+  --nav-bg:     rgba(245, 247, 250, 0.9);
+  --bottom-nav-bg: rgba(238, 241, 245, 0.95);
 }
 
 html { scroll-behavior: smooth; }
@@ -54,7 +58,7 @@ ul { list-style: none; }
   position: fixed; top: 0; width: 100%; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: rgba(8, 12, 15, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -737,7 +741,7 @@ body.light .hero-name { color: #0f172a; }
 .bottom-nav {
   display: none;
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(13, 17, 23, 0.95);
+  background: var(--bottom-nav-bg);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
   padding: 0.5rem 0 0.75rem;
