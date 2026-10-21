@@ -37,7 +37,9 @@ const navObserver = new IntersectionObserver(entries => {
       if (b) b.classList.add('active');
     }
   });
-}, { threshold: 0.4 });
+}, { rootMargin: '-45% 0px -50% 0px' });
+// a section counts as active when it crosses the middle of the screen.
+// the old 0.4 threshold never fired for projects since that section is taller than the screen
 
 sections.forEach(s => navObserver.observe(s));
 

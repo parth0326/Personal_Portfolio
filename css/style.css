@@ -976,6 +976,8 @@ body.light .hero-name { color: #0f172a; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .skills-grid { grid-template-columns: 1fr; }
   .project-breakdown { grid-template-columns: 1fr; gap: 2rem; }
+  .project-search-wrap { width: 100%; }
+  .project-search { width: 100%; }
   .currently-grid { grid-template-columns: 1fr; }
   .section { padding: 4rem 1.5rem; }
 }
