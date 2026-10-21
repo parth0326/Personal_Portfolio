@@ -151,11 +151,13 @@ async function sendMessage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: chatHistory }),
     });
-    const data = await res.json();
+    const data = await res.json().catch(() => ({}));
     const reply = data.reply || 'Sorry, something went wrong.';
     chatMessages.removeChild(typing);
     appendMsg('assistant', reply);
-    chatHistory.push({ role: 'assistant', content: reply });
+    // only keep real answers in the history, not error messages
+    if (res.ok) chatHistory.push({ role: 'assistant', content: reply });
+    else chatHistory.pop();
   } catch {
     chatMessages.removeChild(typing);
     appendMsg('assistant', 'Could not connect. Please try again later.');
