@@ -130,6 +130,11 @@
     <div class="container">
       <h2 class="section-title"><span class="accent">//</span> projects</h2>
 
+      <div class="project-breakdown">
+        <div class="orb-wrap"><div class="orb" id="project-orb"></div></div>
+        <div class="orb-legend" id="orb-legend"></div>
+      </div>
+
       <div class="projects-controls">
         <div class="project-filters">
           <button class="filter-btn active" data-filter="all">all</button>
@@ -142,6 +147,7 @@
           <input type="text" id="project-search" class="project-search" placeholder="search projects..." autocomplete="off" />
         </div>
       </div>
+      <p class="projects-status" aria-live="polite"></p>
       <p class="no-results" style="display:none;">No projects match your search.</p>
 
       <div class="projects-grid">
@@ -248,6 +254,7 @@
 
   <script src="js/projects-data.js"></script>
   <script src="js/projects.js"></script>
+  <script src="js/project-orb.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
