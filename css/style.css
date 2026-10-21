@@ -188,8 +188,9 @@ ul { list-style: none; }
   background: var(--surface);
   align-items: center; justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .hero-photo.no-photo img { display: none; }

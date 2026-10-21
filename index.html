@@ -33,10 +33,10 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-photo">
-        <!-- Replace assets/profile.jpg with your photo -->
+        <!-- drop the photo in at assets/profile.jpg, initials show until then -->
         <img src="assets/profile.jpg" alt="Parth Patel" onerror="this.parentElement.classList.add('no-photo')" />
-        <div class="photo-placeholder">
-          <span>Your Photo</span>
+        <div class="photo-placeholder" aria-hidden="true">
+          <span>pp<span class="accent">_</span></span>
         </div>
       </div>
       <div class="hero-content">
@@ -79,7 +79,7 @@
             machine learning to solve real-world security problems. I'm always building,
             always learning.
           </p>
-          <a href="assets/resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
+          <a href="assets/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">Resume</a>
         </div>
         <div class="about-card">
           <div class="about-card-line"><span class="key">name</span><span class="val">Parth Patel</span></div>

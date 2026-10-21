@@ -182,3 +182,14 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     });
   });
 });
+
+// ── Resume link check ──
+// hide the resume buttons if assets/resume.pdf isn't actually there, so nobody hits a 404
+const resumeLinks = document.querySelectorAll('a[href="assets/resume.pdf"]');
+if (resumeLinks.length && location.protocol.startsWith('http')) {
+  fetch('assets/resume.pdf', { method: 'HEAD' })
+    .then(res => {
+      if (!res.ok) resumeLinks.forEach(a => { a.style.display = 'none'; });
+    })
+    .catch(() => {});
+}
