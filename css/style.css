@@ -470,7 +470,33 @@ body.light .hero-name { color: #0f172a; }
   border: 1px solid rgba(0, 212, 170, 0.2);
 }
 
-.coming-soon-card { opacity: 0.6; }
+.project-card.featured { grid-column: 1 / -1; border-left: 3px solid var(--accent); }
+
+.project-type {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  display: flex; align-items: center; gap: 0.45rem;
+}
+.project-type .project-icon { font-size: 0.8rem; }
+
+.project-when {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  margin-top: -0.4rem;
+}
+
+.tag-cat {
+  background: transparent;
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+.tag-tool {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
 
 /* ── Contact ── */
 .contact-container {

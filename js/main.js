@@ -81,7 +81,7 @@ const staggerGroups = [
 staggerGroups.forEach(selector => {
   document.querySelectorAll(selector).forEach((el, i) => {
     el.classList.add('stagger-item');
-    el.style.transitionDelay = `${i * 80}ms`;
+    el.style.transitionDelay = `${Math.min(i, 6) * 80}ms`;
   });
 });
 
@@ -94,6 +94,8 @@ const fadeObserver = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       fadeObserver.unobserve(entry.target);
+      // clear the delay after it's faded in so hover isn't delayed too
+      setTimeout(() => { entry.target.style.transitionDelay = ''; }, 1000);
     }
   });
 }, { threshold: 0.08 });
@@ -104,39 +106,7 @@ fadeTargets.forEach(el => {
 });
 
 
-// ── Project filter + search ──
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-const searchInput = document.getElementById('project-search');
-const noResults = document.querySelector('.no-results');
-let activeFilter = 'all';
-
-function applyFilters() {
-  const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-  let visible = 0;
-  projectCards.forEach(card => {
-    const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
-    const text = card.textContent.toLowerCase();
-    const searchMatch = query === '' || text.includes(query);
-    const show = categoryMatch && searchMatch;
-    card.style.display = show ? 'flex' : 'none';
-    if (show) visible++;
-  });
-  if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
-}
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
-    applyFilters();
-  });
-});
-
-if (searchInput) {
-  searchInput.addEventListener('input', applyFilters);
-}
+// project filtering + search lives in js/projects.js now
 
 // ── Chat widget ──
 const chatFab = document.getElementById('chat-fab');
