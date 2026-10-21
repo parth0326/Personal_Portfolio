@@ -1,3 +1,13 @@
+// ── Profile photo fallback ──
+// used to be an inline onerror, moved here so the CSP can block inline scripts
+const heroPhoto = document.querySelector('.hero-photo');
+const heroImg = heroPhoto && heroPhoto.querySelector('img');
+if (heroImg) {
+  const noPhoto = () => heroPhoto.classList.add('no-photo');
+  if (heroImg.complete && heroImg.naturalWidth === 0) noPhoto();
+  heroImg.addEventListener('error', noPhoto);
+}
+
 // ── Mobile nav ──
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
