@@ -86,7 +86,7 @@ staggerGroups.forEach(selector => {
 });
 
 const fadeTargets = document.querySelectorAll(
-  '.about-grid, .about-card, .contact-container, .stagger-item'
+  '.about-grid, .about-card, .exp-card, .contact-container, .stagger-item'
 );
 
 const fadeObserver = new IntersectionObserver(entries => {
