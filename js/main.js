@@ -11,8 +11,14 @@ if (heroImg) {
 // ── Mobile nav ──
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}));
 
 // ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id]');

@@ -979,3 +979,22 @@ body.light .hero-name { color: #0f172a; }
   .currently-grid { grid-template-columns: 1fr; }
   .section { padding: 4rem 1.5rem; }
 }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-in, .stagger-item { opacity: 1; transform: none; }
+}
+
+/* keyboard focus that's actually visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
